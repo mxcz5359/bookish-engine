@@ -18,7 +18,7 @@ config config_subscribe
 
 config config_subscribe
 	option enabled '1'
-	option name '红杏-自动'
+	option name '红杏'
 	option address 'https://hongxingdl.com/hxvip?token=a75f884a74d53914930c504e3a54ccee'
 	option sub_convert '1'
 	option template '0'
@@ -29,7 +29,7 @@ config config_subscribe
 	option sort 'false'
 	option node_type 'false'
 	option rule_provider 'false'
-	list ex_keyword '0.5'
+	list ex_keyword '0'
 	option sub_ua 'clash.meta'
 	option convert_address 'https://subsrv.ok1248.cn:4433/sub'
 
@@ -48,8 +48,8 @@ config dns_servers
 config dns_servers
 	option group 'nameserver'
 	option type 'udp'
-	option ip '222.172.200.68'
-	option enabled '0'
+	option ip '60.217.44.33'
+	option enabled '1'
 
 config dns_servers
 	option group 'nameserver'
