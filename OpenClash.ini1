@@ -13,16 +13,16 @@ ruleset=🐾 国外,https://raw.githubusercontent.com/blackmatrix7/ios_rule_scri
 ruleset=⭐ 国内,DIRECT
 
 ;2、策略组（域名组-节点组）
-custom_proxy_group=⚛ AI`select`[]手动`[]香港`[]台湾`[]日本`[]新加坡`[]韩国`[]美国`[]德国`[]英国`[]其他`[]DIRECT
-custom_proxy_group=🕊️ GitHub`select`[]手动`[]自动`[]香港`[]台湾`[]日本`[]新加坡`[]韩国`[]美国`[]德国`[]英国`[]其他
-custom_proxy_group=👻 TikTok`select`[]手动`[]香港`[]台湾`[]日本`[]新加坡`[]韩国`[]美国`[]德国`[]英国`[]其他
-custom_proxy_group=🐳 Telegram`select`[]自动`[]香港`[]台湾`[]日本`[]新加坡`[]韩国`[]美国`[]德国`[]英国`[]其他`[]手动
-custom_proxy_group=🌿 流媒体`select`[]手动`[]自动`[]香港`[]台湾`[]日本`[]新加坡`[]韩国`[]美国`[]德国`[]英国`[]其他
-custom_proxy_group=❄️ YouTube`select`[]自动`[]香港`[]台湾`[]日本`[]新加坡`[]韩国`[]美国`[]德国`[]英国`[]其他`[]手动
-custom_proxy_group=💦 Disney`select`[]香港`[]台湾`[]日本`[]新加坡`[]韩国`[]美国`[]德国`[]英国`[]其他`[]手动`[]自动
-custom_proxy_group=☃️ Netflix`select`[]香港`[]台湾`[]日本`[]新加坡`[]韩国`[]美国`[]德国`[]英国`[]其他`[]手动`[]自动
-custom_proxy_group=🐾 国外`select`[]自动`[]香港`[]台湾`[]日本`[]新加坡`[]韩国`[]美国`[]德国`[]英国`[]其他`[]手动`[]DIRECT
-custom_proxy_group=⭐ 国内`select`[]DIRECT`[]手动`[]自动`[]香港`[]台湾`[]日本`[]新加坡`[]韩国`[]美国`[]德国`[]英国`[]其他
+custom_proxy_group=⚛ AI`select`[]手动`[]香港`[]台湾`[]日本`[]新加坡`[]韩国`[]美国`[]德国`[]英国`[]DIRECT
+custom_proxy_group=🕊️ GitHub`select`[]手动`[]自动`[]香港`[]台湾`[]日本`[]新加坡`[]韩国`[]美国`[]德国`[]英国
+custom_proxy_group=👻 TikTok`select`[]手动`[]香港`[]台湾`[]日本`[]新加坡`[]韩国`[]美国`[]德国`[]英国
+custom_proxy_group=🐳 Telegram`select`[]自动`[]香港`[]台湾`[]日本`[]新加坡`[]韩国`[]美国`[]德国`[]英国`[]手动
+custom_proxy_group=🌿 流媒体`select`[]手动`[]自动`[]香港`[]台湾`[]日本`[]新加坡`[]韩国`[]美国`[]德国`[]英国
+custom_proxy_group=❄️ YouTube`select`[]自动`[]香港`[]台湾`[]日本`[]新加坡`[]韩国`[]美国`[]德国`[]英国`[]手动
+custom_proxy_group=💦 Disney`select`[]香港`[]台湾`[]日本`[]新加坡`[]韩国`[]美国`[]德国`[]英国`[]手动`[]自动
+custom_proxy_group=☃️ Netflix`select`[]香港`[]台湾`[]日本`[]新加坡`[]韩国`[]美国`[]德国`[]英国`[]手动`[]自动
+custom_proxy_group=🐾 国外`select`[]自动`[]香港`[]台湾`[]日本`[]新加坡`[]韩国`[]美国`[]德国`[]英国`[]手动
+custom_proxy_group=⭐ 国内`select`[]DIRECT`[]手动`[]自动`[]香港`[]台湾`[]日本`[]新加坡`[]韩国`[]美国`[]德国`[]英国
 
 ;3、节点组
 custom_proxy_group=手动`select`.*
@@ -35,7 +35,6 @@ custom_proxy_group=韩国`url-test`(广韩|韩国|韓國|KR|首尔|春川|🇰�
 custom_proxy_group=美国`url-test`(广美|美|US|纽约|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|🇺🇸|United States)`http://www.gstatic.com/generate_204`60,150
 custom_proxy_group=德国`url-test`(DE|德)`http://www.gstatic.com/generate_204`60,150
 custom_proxy_group=英国`url-test`(GB|英)`http://www.gstatic.com/generate_204`60,150
-custom_proxy_group=其他`select`(波|柬|斯|尼|也|克|比|尔|立|冰|秘|耳|利|埃|希|斯|孟|芬|阿|愛|澳|南|意|法|拿|墨|印|越|俄|瑞|智|荷|比|巴|沙|班|泰|德|烏|以|Australia|Konghwaguk)
 
 ;4、启用规则集
 enable_rule_generator=true
