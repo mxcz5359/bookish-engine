@@ -24,6 +24,8 @@ DOMAIN-SUFFIX,stripe.com
 DOMAIN-SUFFIX,bard.google.com
 DOMAIN-SUFFIX,gemini.google.com
 DOMAIN-SUFFIX,makersuite.google.com
+DOMAIN-SUFFIX,groq.com
+DOMAIN-SUFFIX,nvidia.com
 DOMAIN-SUFFIX,anthropic.com
 DOMAIN-SUFFIX,claude.ai
 DOMAIN-SUFFIX,circumlunar.space
