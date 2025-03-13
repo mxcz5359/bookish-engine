@@ -50,7 +50,7 @@ config mixin 'mixin'
 	option tcp_keep_alive_idle '600'
 	option tcp_keep_alive_interval '15'
 	option ui_path 'ui'
-	option ui_url 'https://github.com/MetaCubeX/Yacd-meta/archive/refs/heads/gh-pages.zip'
+	option ui_url 'https://github.com/Zephyruso/zashboard/archive/refs/heads/gh-pages.zip'
 	option selection_cache '1'
 	option allow_lan '1'
 	option http_port '8080'
@@ -96,10 +96,10 @@ config mixin 'mixin'
 	option geox_update_interval '24'
 	option mixin_file_content '0'
 	option ui_name 'yacd'
-	option api_listen '[::]:9090'
+	option api_listen '[::]:8888'
 	option dns_listen '[::]:1053'
 	option fake_ip_filter_mode 'blacklist'
-	option api_secret '123456'
+	option api_secret '5359'
 	option dns_hosts '1'
 	list fake_ip_filters '+.lan'
 	list fake_ip_filters '+.local'
@@ -137,8 +137,8 @@ config nameserver
 config nameserver
 	option enabled '1'
 	option type 'nameserver'
-	list nameserver '223.5.5.5'
-	list nameserver '119.29.29.29'
+	list nameserver '202.102.154.3'
+	list nameserver '202.102.152.3'
 
 config nameserver
 	option enabled '0'
@@ -185,7 +185,8 @@ config log 'log'
 
 config hosts
 	option enabled '1'
-	option domain_name '[反代理域名：*.abc.com]'
+	option domain_name '*.175359.xyz'
+	list ip '192.168.0.3'
 
 config nameserver_policy
 	option enabled '0'
@@ -195,7 +196,9 @@ config nameserver_policy
 
 config subscription
 	option name 'my'
-	option url '1'
-	option user_agent 'clash.meta'
+	option url 'http://192.168.0.2:25500/sub?target=clash&url=https%3A%2F%2Fapp.mitce.com%2F%3Fsid%3D203093%26token%3D91a6e29abb26df3e5e88%7Chttps%3A%2F%2Fhongxingdl.love%2Fhxyunvip%3Ftoken%3Da75f884a74d53914930c504e3a54ccee%7Chttp%3A%2F%2F192.168.0.2%3A3001%2FCKg2abstVnOeRpm1aB4G%2Fdownload%2F0&insert=false&config=https%3A%2F%2Fraw.githubusercontent.com%2Fmxcz5359%2Fbookish-engine%2Frefs%2Fheads%2Fmain%2FOpen.Clash.ini&exclude=LoadBalance%7CFail%7CApples%7CNode%7CCHN%7CLeast%7CBlocked%7CGoogle%7C%E5%89%A9%E4%BD%99%7C%E5%A5%97%E9%A4%90%7C%E5%AE%98%E7%BD%91%7C%E8%87%AA%E5%8A%A8%7C%E6%A0%B8%E6%98%BE%7C%E6%95%85%E9%9A%9C&emoji=true&list=false&tfo=false&scv=true&fdn=false&expand=true&sort=false&new_name=true'
+	option user_agent 'clash'
 	option prefer 'remote'
+	option update '2025-03-13 20:36:21'
+	option success '1'
 
