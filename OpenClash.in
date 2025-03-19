@@ -12,7 +12,7 @@ ruleset=⭐国内,DIRECT
 
 
 ;2、策略组（域名组-节点组）
-custom_proxy_group=⚛ AI1`select`[]DIRECT`[]💦`[]香港`[]台湾`[]日本`[]新加坡`[]美国`[]☃️`[]REJECT
+custom_proxy_group=⚛ AI`select`[]DIRECT`[]💦`[]香港`[]台湾`[]日本`[]新加坡`[]美国`[]☃️`[]REJECT
 custom_proxy_group=🕊️ GitHub`select`[]DIRECT`[]💦`[]香港`[]台湾`[]日本`[]新加坡`[]美国`[]☃️`[]REJECT
 custom_proxy_group=👻 TikTok`select`[]DIRECT`[]💦`[]香港`[]台湾`[]日本`[]新加坡`[]美国`[]☃️`[]REJECT
 custom_proxy_group=🐳 Telegram`select`[]DIRECT`[]💦`[]香港`[]台湾`[]日本`[]新加坡`[]美国`[]☃️`[]REJECT
