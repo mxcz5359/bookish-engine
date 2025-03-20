@@ -46,7 +46,7 @@ mixed-port: 7893
 tproxy-port: 7894
 allow-lan: true
 bind-address: "*"
-ipv6: ture
+ipv6: true
 unified-delay: true
 tcp-concurrent: true
 log-level: warning
@@ -61,7 +61,7 @@ profile:
   store-fake-ip: true
 
 # 控制面板
-external-controller: 192.168.0.1:5359
+external-controller: 0.0.0.0:5359
 secret: "5359"
 external-ui: "/etc/op/run/ui"
 external-ui-name: zashboard
