@@ -1,5 +1,3 @@
-# 注意规则在满足自己需求情况下，尽量做到精简，不要过度复杂，以免影响性能。
-# 机场订阅
 proxy-providers:
   Mitce:
     url: "https://app.mitce.com"
@@ -16,7 +14,7 @@ proxy-providers:
       - "mihomo"
       - "Clash.meta"
     override:
-      udp: turn
+      udp: true
   Hongxing:
     url: "https://app.mitce.com"
     type: http
@@ -32,7 +30,7 @@ proxy-providers:
       - "mihomo"
       - "Clash.meta"
     override:
-      udp: turn
+      udp: true
 
 # 节点信息
 proxies:
@@ -128,79 +126,81 @@ dns:
     - 223.5.5.5
   proxy-server-nameserver:
     - https://dns.alidns.com/dns-query
-  # namesever尽量用运营商提供的DNS
   nameserver:
     - 202.102.152.3
     - 202.102.154.3
     - 223.5.5.5
 
-# 出站策略
-# 锚点
-pr: &pr {type: select, proxies: [香港, 台湾, 日本, 新加坡, 美国, 直连, 🐬 选择代理,直连]}
-# 策略组
+
+pr: &pr {type: select, proxies: [🐾 国外, 香港, 台湾, 日本, 新加坡, 美国, 直连, 🌐 全部]}
 proxy-groups:
-  - {name: ⚛ AI, <<: *pr}
-  - {name: 🕊️ GitHub, <<: *pr}
-  - {name: 👻 TikTok, <<: *pr}
-  - {name: 🐧 Telegram, <<: *pr}
-  - {name: 🌿 流媒体, <<: *pr}
-  - {name: 🕸️ Google, <<: *pr}
-  - {name: ❄️ YouTube, <<: *pr}
-  - {name: 💦 Disney, <<: *pr}
-  - {name: ☃️ Netflix, <<: *pr}
-  - {name: 🐾 国外, <<: *pr}
-  - {name: 🐬 检测, <<: *pr}
-  - {name: 🎯 直连, type: select, proxies: [直连]}
-  - {name: 香港, type: url-test, include-all: true, filter: "(广港|香港|HK|Hong Kong|🇭🇰|HongKong)", url: 'http://www.gstatic.com/generate_204', interval: 60, tolerance: 150}
-  - {name: 台湾, type: url-test, include-all: true, filter: "(广台|台湾|台灣|TW|Tai Wan|🇹🇼|🇨🇳|TaiWan|Taiwan)", url: 'http://www.gstatic.com/generate_204', interval: 60, tolerance: 150}
-  - {name: 日本, type: url-test, include-all: true, filter: "(广日|日本|JP|川日|东京|大阪|泉日|埼玉|沪日|深日|🇯🇵|Japan)", url: 'http://www.gstatic.com/generate_204', interval: 60, tolerance: 150}
-  - {name: 新加坡, type: url-test, include-all: true, filter: "(广新|新加坡|SG|坡|狮城|🇸🇬|Singapore)", url: 'http://www.gstatic.com/generate_204', interval: 60, tolerance: 150}
-  - {name: 美国, type: url-test, include-all: true, filter: "(广美|美|US|纽约|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|🇺🇸|United States)", url: 'http://www.gstatic.com/generate_204', interval: 60, tolerance: 150}
+  - {name: 🐾 国外 , type: select, proxies: [香港, 台湾, 日本, 新加坡, 美国, 直连, 🌐 全部]}
+  - {name:  ⚛ AI, <<: *pr}
+  - {name:  🕊️ GitHub, <<: *pr}
+  - {name:  👻 TikTok, <<: *pr}
+  - {name:  🐧 Telegram, <<: *pr}
+  - {name:  🌿 HBO, <<: *pr}
+  - {name:  🌿 Spotify, <<: *pr}
+  - {name:  🕸️ Google, <<: *pr}
+  - {name:  ❄️ YouTube, <<: *pr}
+  - {name:  💦 Disney, <<: *pr}
+  - {name:  ☃️ Netflix, <<: *pr}
+  - {name:  🐬 检测, <<: *pr}
+  - {name:  🎯 直连, type: select, proxies: [🐾 国外, 直连]}
+  - {name:  香港, type: url-test, include-all: true, filter: "(广港|香港|HK|Hong Kong|🇭🇰|HongKong)", url: 'http://www.gstatic.com/generate_204', interval: 60, tolerance: 150}
+  - {name:  台湾, type: url-test, include-all: true, filter: "(广台|台湾|台灣|TW|Tai Wan|🇹🇼|🇨🇳|TaiWan|Taiwan)", url: 'http://www.gstatic.com/generate_204', interval: 60, tolerance: 150}
+  - {name:  日本, type: url-test, include-all: true, filter: "(广日|日本|JP|川日|东京|大阪|泉日|埼玉|沪日|深日|🇯🇵|Japan)", url: 'http://www.gstatic.com/generate_204', interval: 60, tolerance: 150}
+  - {name:  新加坡, type: url-test, include-all: true, filter: "(广新|新加坡|SG|坡|狮城|🇸🇬|Singapore)", url: 'http://www.gstatic.com/generate_204', interval: 60, tolerance: 150}
+  - {name:  美国, type: url-test, include-all: true, filter: "(广美|美|US|纽约|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|🇺🇸|United States)", url: 'http://www.gstatic.com/generate_204', interval: 60, tolerance: 150}
+  - {name:  🌐 全部, type: select, include-all: true}
+
 # 规则匹配
 rules:
   - RULE-SET,private_domain,直连
   - RULE-SET,proxylite,🐾 国外
   - RULE-SET,ai,⚛ AI
   - RULE-SET,github_domain,🕊️ GitHub
-  - RULE-SET,hbo_domain,🌿 流媒体
-  - RULE-SET,spotify_domain,🌿 流媒体
+  - RULE-SET,hbo_domain,🌿 HBO
+  - RULE-SET,spotify_domain,🌿 Spotify
   - RULE-SET,youtube_domain,❄️ YouTube
   - RULE-SET,google_domain,🕸️ Google
   - RULE-SET,tiktok_domain,👻 TikTok
   - RULE-SET,speedtest_domain,🐬 检测
   - RULE-SET,telegram_domain,🐧 Telegram
   - RULE-SET,netflix_domain,☃️ Netflix
-  - RULE-SET,disney_domain,💦Disney
+  - RULE-SET,disney_domain,💦 Disney
   - RULE-SET,gfw_domain,🐾 国外
-  - RULE-SET,gwall_domain,🐾 国外
   - RULE-SET,geolocation-!cn,🐾 国外
   - RULE-SET,cn_domain,🎯 直连
   - RULE-SET,google_ip,🕸️ Google,no-resolve
   - RULE-SET,netflix_ip,☃️ Netflix,no-resolve
   - RULE-SET,telegram_ip, 🐧 Telegram,no-resolve
   - RULE-SET,cn_ip,🎯 直连
+
 # 规则集
 rule-anchor:
   ip: &ip {type: http, interval: 86400, behavior: ipcidr, format: mrs}
   domain: &domain {type: http, interval: 86400, behavior: domain, format: mrs}
   class: &class {type: http, interval: 86400, behavior: classical, format: text}
 rule-providers:
+  private_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/private.mrs"}
+  proxylite: { <<: *class, url: "https://raw.githubusercontent.com/qichiyuhub/rule/refs/heads/master/ProxyLite.list"}
   ai: { <<: *class, url: "https://raw.githubusercontent.com/mxcz5359/bookish-engine/refs/heads/main/ai.list"}
   github_domain: { <<: *class, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/GitHub/GitHub.list"}
   tiktok_domain: { <<: *class, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/TikTok/TikTok.list"}
   telegram_domain: { <<: *class, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Telegram/Telegram.list"}
   spotify_domain: { <<: *class, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Spotify/Spotify.list"} # Renamed for clarity
-  hbo_domain": { <<: *class, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/HBO/HBO.list"} # Renamed for clarity
+  hbo_domain: { <<: *class, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/HBO/HBO.list"} # Renamed for clarity
   google_domain: { <<: *class, url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/Ruleset/Google.list"}
   youtube_domain: { <<: *class, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/YouTube/YouTube.list"}
   disney_domain: { <<: *class, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Disney/Disney.list"}
   netflix_domain: { <<: *class, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Netflix/Netflix.list"}
-  gfw_domain: { <<: *class, url: "https://raw.githubusercontent.com/liandu2024/clash/refs/heads/main/Proxy.list"} # Renamed for clarity
-  gwall_domain: { <<: *class, url: "https://raw.githubusercontent.com/mxcz5359/bookish-engine/refs/heads/main/all.list"} # Renamed for clarity
-  geolocation-!cn: { <<: *class, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Global/Global.list"} # Renamed for clarity
+  gfw_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/gfw.mrs"}
+  geolocation-!cn: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/geolocation-!cn.mrs"}
   speedtest_domain: { <<: *class, url: "https://raw.githubusercontent.com/liandu2024/clash/refs/heads/main/list/Check.list"}
   cn_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/cn.mrs"}
+ 
+  cn_ip: { <<: *ip, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/cn.mrs"}
   google_ip: { <<: *ip, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/google.mrs"}
   telegram_ip: { <<: *ip, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/telegram.mrs"}
   netflix_ip: { <<: *ip, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/netflix.mrs"}
-  cn_ip: { <<: *ip, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/cn.mrs"}
