@@ -1,0 +1,232 @@
+proxy-providers:
+  Mitce:
+    url: "https://app.mitce.com/?sid=203093&token=91a6e29abb26df3e5e88"
+    type: http
+    interval: 86400
+    health-check:
+      enable: true
+      url: https://www.gstatic.com/generate_204
+      interval: 240
+    proxy: 直连
+    header:
+      User-Agent:
+      - "Clash"
+      - "mihomo"
+      - "Clash.meta"
+    override:
+      udp: true
+  Hongxing:
+    url: "https://hongxingdl.love/hxyunvip?token=a75f884a74d53914930c504e3a54ccee"
+    type: http
+    interval: 86400
+    health-check:
+      enable: true
+      url: https://www.gstatic.com/generate_204
+      interval: 240
+    proxy: 直连
+    header:
+      User-Agent:
+      - "Clash"
+      - "mihomo"
+      - "Clash.meta"
+    override:
+      udp: true
+
+# 节点信息
+proxies:
+  - {name: 直连, type: direct, udp: true}
+
+# 全局配置 
+port: 7890
+socks-port: 7891
+redir-port: 7892
+mixed-port: 7893
+tproxy-port: 7894
+allow-lan: true
+bind-address: "*"
+ipv6: true
+unified-delay: true
+tcp-concurrent: true
+log-level: warning
+find-process-mode: 'off'
+# interface-name: en0
+global-client-fingerprint: chrome
+keep-alive-idle: 600
+keep-alive-interval: 15
+disable-keep-alive: false
+profile:
+  store-selected: true
+  store-fake-ip: true
+
+# 控制面板
+external-controller: 0.0.0.0:5359
+secret: "5359"
+external-ui: "/etc/op/run/ui"
+external-ui-name: zashboard
+external-ui-url: "https://github.com/Zephyruso/zashboard/archive/refs/heads/gh-pages.zip"
+
+# 嗅探
+sniffer:
+  enable: true
+  sniff:
+    HTTP:
+      ports: [80, 8080-8880]
+      override-destination: true
+    TLS:
+      ports: [443, 8443]
+    QUIC:
+      ports: [443, 8443]
+  force-domain:
+    - "+.v2ex.com"
+  skip-domain:
+    - "rule-set:private_domain,cn_domain"
+    - "dlg.io.mi.com"
+    - "+.push.apple.com"
+    - "+.apple.com"
+    - "+.wechat.com"
+    - "+.qpic.cn"
+    - "+.qq.com"
+    - "+.wechatapp.com"
+    - "+.vivox.com"
+    - "+.oray.com"
+    - "+.sunlogin.net"
+    - "+.msftconnecttest.com"
+    - "+.msftncsi.com"
+
+# 入站  
+tun:
+  enable: true
+  # system/gvisor/mixed
+  stack: gvisor
+  dns-hijack: ["any:53", "tcp://any:53"]
+  auto-route: true
+  auto-redirect: true
+  auto-detect-interface: true
+
+# DNS模块
+dns:
+  enable: true
+  listen: 0.0.0.0:7874
+  ipv6: true
+  respect-rules: true
+  enhanced-mode: fake-ip
+  fake-ip-range: 28.0.0.1/8
+  fake-ip-filter-mode: blacklist
+  fake-ip-filter:
+    - "rule-set:private_domain,cn_domain"
+    - "+.services.googleapis.cn"
+    - "+.xn--ngstr-lra8j.com"
+    - "time.*.com"
+    - "+.pool.ntp.org"
+    - "+.ntp.tencent.com"
+    - "+.ntp1.aliyun.com"
+    - "+.ntp.ntsc.ac.cn"
+    - "+.cn.ntp.org.cn"
+  default-nameserver:
+    - 223.5.5.5
+  proxy-server-nameserver:
+    - https://dns.alidns.com/dns-query
+  nameserver:
+    - 202.102.152.3
+    - 202.102.154.3
+    - 223.5.5.5
+
+
+pr: &pr {type: select, proxies: [🐾 国外, 🇭🇰 香港, 🇹🇼 台湾, 🇯🇵 日本, 🇸🇬 新加坡, 🇰🇷 韩国, 🇨🇦 加拿大, 🇬🇧 英国, 🇫🇷 法国, 🇩🇪 德国, 🇳🇱 荷兰, 🇹🇷 土耳其, 🇻🇳 越南, 🇨🇱 智利, 🇨🇭 瑞士, 🇸🇪 瑞典, 🇮🇱 以色列, 🇹🇭 泰国, 🇿🇦 南非, 🇵🇭 菲律宾, 🇳🇬 尼日利亚, 🇮🇳 印度, 🇮🇩 印度尼西亚, 🇨🇴 哥伦比亚, 🇦🇪 迪拜, 🇧🇷 巴西, 🇪🇸 西班牙, 🇺🇸 美国, 直连, 🌐 全部]}
+proxy-groups:
+  - {name: 🐾 国外, type: fallback, include-all: true, filter: "^((?!(直连|🇨🇳|CN|China|中国)).)*$", interval: 60}
+  - {name:  ⚛ AI, <<: *pr}
+  - {name:  🕊️ GitHub, <<: *pr}
+  - {name:  👻 TikTok, <<: *pr}
+  - {name:  🐧 Telegram, <<: *pr}
+  - {name:  🌿 Microsoft, <<: *pr}
+  - {name:  🕸️ Google, <<: *pr}
+  - {name:  ❄️ YouTube, <<: *pr}
+  - {name:  💦 Disney, <<: *pr}
+  - {name:  ☃️ Netflix, <<: *pr}
+  - {name:  🐬 检测, <<: *pr}
+  - {name:  🇨🇳 直连, type: select, proxies: [🐾 国外, 直连]}
+  - {name:  🇭🇰 香港, type: url-test, include-all: true, filter: "(广港|香港|HK|Hong Kong|🇭🇰|HongKong)", url: 'http://www.gstatic.com/generate_204', interval: 60, tolerance: 150}
+  - {name:  🇹🇼 台湾, type: url-test, include-all: true, filter: "(广台|台湾|台灣|TW|Tai Wan|🇹🇼|🇨🇳|TaiWan|Taiwan)", url: 'http://www.gstatic.com/generate_204', interval: 60, tolerance: 150}
+  - {name:  🇯🇵 日本, type: url-test, include-all: true, filter: "(广日|日本|JP|川日|东京|大阪|泉日|埼玉|沪日|深日|🇯🇵|Japan)", url: 'http://www.gstatic.com/generate_204', interval: 60, tolerance: 150}
+  - {name:  🇸🇬 新加坡, type: url-test, include-all: true, filter: "(广新|新加坡|SG|坡|狮城|🇸🇬|Singapore)", url: 'http://www.gstatic.com/generate_204', interval: 60, tolerance: 150}
+  - {name:  🇰🇷 韩国, type: url-test, include-all: true, filter: "(广韩|韩国|韓國|KR|首尔|春川|🇰🇷|Korea)", url: 'http://www.gstatic.com/generate_204', interval: 60, tolerance: 150}
+  - {name:  🇨🇦 加拿大, type: url-test, include-all: true, filter: "(加拿大|Canada|渥太华|温哥华|卡尔加里|CA|🇨🇦)", url: 'http://www.gstatic.com/generate_204', interval: 60, tolerance: 150}
+  - {name:  🇬🇧 英国, type: url-test, include-all: true, filter: "(英国|Great|Britain|GB)", url: 'http://www.gstatic.com/generate_204', interval: 60, tolerance: 150}
+  - {name:  🇫🇷 法国, type: url-test, include-all: true, filter: "(法国|France|巴黎|🇫🇷|FR)", url: 'http://www.gstatic.com/generate_204', interval: 60, tolerance: 150}
+  - {name:  🇩🇪 德国, type: url-test, include-all: true, filter: "(德国|Germany|DE|🇩🇪|柏林|法兰克福)", url: 'http://www.gstatic.com/generate_204', interval: 60, tolerance: 150}
+  - {name:  🇳🇱 荷兰, type: url-test, include-all: true, filter: "(荷兰|Netherlands|🇳🇱|NL|阿姆斯特丹)", url: 'http://www.gstatic.com/generate_204', interval: 60, tolerance: 150}
+  - {name:  🇹🇷 土耳其, type: url-test, include-all: true, filter: "(土耳其|Turkey|TR|🇹🇷|Türkiye)", url: 'http://www.gstatic.com/generate_204', interval: 60, tolerance: 150}
+  - {name:  🇻🇳 越南, type: url-test, include-all: true, filter: "(越南|Vietnam|VN|🇻🇳)", url: 'http://www.gstatic.com/generate_204', interval: 60, tolerance: 150}
+  - {name: 🇷🇺 俄罗斯, type: url-test, include-all: true, filter: "(俄罗斯|莫斯科|Russia|Moscow|RU|🇷🇺)", url: 'http://www.gstatic.com/generate_204', interval: 60, tolerance: 150}
+  - {name: 🇨🇱 智利, type: url-test, include-all: true, filter: "(智利|圣地亚哥|Chile|Santiago|CL|🇨🇱)", url: 'http://www.gstatic.com/generate_204', interval: 60, tolerance: 150} 
+  - {name: 🇨🇭 瑞士, type: url-test, include-all: true, filter: "(瑞士|伯尔尼|Switzerland|Bern|CH|🇨🇭)", url: 'http://www.gstatic.com/generate_204', interval: 60, tolerance: 150}  
+  - {name: 🇸🇪 瑞典, type: url-test, include-all: true, filter: "(瑞典|斯德哥尔摩|Sweden|Stockholm|SE|🇸🇪)", url: 'http://www.gstatic.com/generate_204', interval: 60, tolerance: 150}  
+  - {name: 🇮🇱 以色列, type: url-test, include-all: true, filter: "(以色列|耶路撒冷|Israel|Jerusalem|IL|🇮🇱)", url: 'http://www.gstatic.com/generate_204', interval: 60, tolerance: 150}  
+  - {name: 🇹🇭 泰国, type: url-test, include-all: true, filter: "(泰国|曼谷|Thailand|Bangkok|TH|🇹🇭)", url: 'http://www.gstatic.com/generate_204', interval: 60, tolerance: 150}  
+  - {name: 🇿🇦 南非, type: url-test, include-all: true, filter: "(南非|比勒陀利亚|开普敦|布隆方丹|South Africa|Pretoria|Cape Town|Bloemfontein|ZA|🇿🇦)", url: 'http://www.gstatic.com/generate_204', interval: 60, tolerance: 150}  
+  - {name: 🇵🇭 菲律宾, type: url-test, include-all: true, filter: "(菲律宾|马尼拉|Philippines|Manila|PH|🇵🇭)", url: 'http://www.gstatic.com/generate_204', interval: 60, tolerance: 150}  
+  - {name: 🇳🇬 尼日利亚, type: url-test, include-all: true, filter: "(尼日利亚|阿布贾|Nigeria|Abuja|NG|🇳🇬)", url: 'http://www.gstatic.com/generate_204', interval: 60, tolerance: 150}  
+  - {name: 🇮🇳 印度, type: url-test, include-all: true, filter: "(印度|新德里|India|New Delhi|IN|🇮🇳)", url: 'http://www.gstatic.com/generate_204', interval: 60, tolerance: 150}  
+  - {name: 🇮🇩 印度尼西亚, type: url-test, include-all: true, filter: "(印度尼西亚|印尼|雅加达|Indonesia|Jakarta|ID|🇮🇩)", url: 'http://www.gstatic.com/generate_204', interval: 60, tolerance: 150}  
+  - {name: 🇨🇴 哥伦比亚, type: url-test, include-all: true, filter: "(哥伦比亚|波哥大|Colombia|Bogotá|CO|🇨🇴)", url: 'http://www.gstatic.com/generate_204', interval: 60, tolerance: 150}  
+  - {name: 🇦🇪 迪拜, type: url-test, include-all: true, filter: "(阿联酋|阿布扎比|迪拜|UAE|Abu Dhabi|Dubai|AE|🇦🇪)", url: 'http://www.gstatic.com/generate_204', interval: 60, tolerance: 150}  
+  - {name: 🇧🇷 巴西, type: url-test, include-all: true, filter: "(巴西|巴西利亚|Brazil|Brasília|BR|🇧🇷)", url: 'http://www.gstatic.com/generate_204', interval: 60, tolerance: 150}  
+  - {name: 🇪🇸 西班牙, type: url-test, include-all: true, filter: "(西班牙|马德里|Spain|Madrid|ES|🇪🇸)", url: 'http://www.gstatic.com/generate_204', interval: 60, tolerance: 150}  
+  - {name:  🇺🇸 美国, type: url-test, include-all: true, filter: "(广美|美|US|纽约|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|🇺🇸|United States)", url: 'http://www.gstatic.com/generate_204', interval: 60, tolerance: 150}
+  - {name:  🌐 全部, type: select, include-all: true}
+
+# 规则匹配
+rules:
+  - RULE-SET,private_domain,直连
+  - RULE-SET,proxylite,🐾 国外
+  - RULE-SET,ai,⚛ AI
+  - RULE-SET,ai1,⚛ AI
+  - RULE-SET,github_domain,🕊️ GitHub
+  - RULE-SET,microsoft_domain,🌿 Microsoft
+  - RULE-SET,youtube_domain,❄️ YouTube
+  - RULE-SET,google_domain,🕸️ Google
+  - RULE-SET,google,🕸️ Google
+  - RULE-SET,tiktok_domain,👻 TikTok
+  - RULE-SET,speedtest_domain,🐬 检测
+  - RULE-SET,telegram_domain,🐧 Telegram
+  - RULE-SET,netflix_domain,☃️ Netflix
+  - RULE-SET,netflix,☃️ Netflix
+  - RULE-SET,disney_domain,💦 Disney
+  - RULE-SET,gfw_domain,🐾 国外
+  - RULE-SET,geolocation-!cn,🐾 国外
+  - RULE-SET,cn_domain,🇨🇳 直连
+  - RULE-SET,google_ip,🕸️ Google,no-resolve
+  - RULE-SET,netflix_ip,☃️ Netflix,no-resolve
+  - RULE-SET,telegram_ip, 🐧 Telegram,no-resolve
+  - RULE-SET,cn_ip,🇨🇳 直连
+
+# 规则集
+rule-anchor:
+  ip: &ip {type: http, interval: 86400, behavior: ipcidr, format: mrs}
+  domain: &domain {type: http, interval: 86400, behavior: domain, format: mrs}
+  class: &class {type: http, interval: 86400, behavior: classical, format: text}
+rule-providers: 
+  private_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/private.mrs"}
+  proxylite: { <<: *class, url: "https://raw.githubusercontent.com/qichiyuhub/rule/refs/heads/master/ProxyLite.list"}
+  ai: {  <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/category-ai-chat-!cn.mrs" }
+  ai1: { <<: *class, url: "https://raw.githubusercontent.com/mxcz5359/bookish-engine/refs/heads/main/ai.list"}
+  youtube_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/youtube.mrs"}
+  google_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/google.mrs"}
+  google: { <<: *domain, url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/Ruleset/Google.list"}
+  github_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/github.mrs"}
+  telegram_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/telegram.mrs"}
+  netflix_domain: {<<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/netflix.mrs"}
+  netflix: { <<: *class, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Netflix/Netflix.list"}
+  microsoft_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/microsoft.mrs"}
+  disney_domain: {<<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/disney.mrs"}
+  gfw_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/gfw.mrs"}
+  tiktok_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/tiktok.mrs"}
+  geolocation-!cn: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/geolocation-!cn.mrs"}
+  speedtest_domain: { <<: *class, url: "https://raw.githubusercontent.com/liandu2024/clash/refs/heads/main/list/Check.list"}
+  cn_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/cn.mrs"}
+ 
+  cn_ip: { <<: *ip, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/cn.mrs"}
+  google_ip: { <<: *ip, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/google.mrs"}
+  telegram_ip: { <<: *ip, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/telegram.mrs"}
+  netflix_ip: { <<: *ip, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/netflix.mrs"}
