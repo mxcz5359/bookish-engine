@@ -152,7 +152,7 @@ proxy-groups:
   - {name: ✈️ Speedtest, <<: *pr}
   - {name: 💶 PayPal, <<: *pr}
   - {name: 🍎 Apple, type: select, proxies: [🟢 直连, 🚀 节点选择]}
-  - {name: 🎯 全球直连, type: select, proxies: [🟢 直连]} # Removed 🚀 节点选择 as fallback for direct, as per your "⭐ 国内" group
+  - {name: 🎯 全球直连, type: select, proxies: [🟢 直连]}
   - {name: 🐟 漏网之鱼, <<: *pr}
   - {name: 🐬 选择代理, type: select, include-all: true}
   - {name: 香港, type: url-test, include-all: true, filter: "(广港|香港|HK|Hong Kong|🇭🇰|HongKong)", url: 'http://www.gstatic.com/generate_204', interval: 60, tolerance: 150}
