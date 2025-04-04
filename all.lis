@@ -15,11 +15,6 @@ DOMAIN-SUFFIX,wikivoyage.org
 DOMAIN-SUFFIX,wiktionary.org
 
 # =============================
-# 📰 新闻网站
-# =============================
-DOMAIN-SUFFIX,nytimes.com  # 纽约时报
-
-# =============================
 # 📺 影音媒体
 # =============================
 DOMAIN-SUFFIX,xiaoxintv.cc
