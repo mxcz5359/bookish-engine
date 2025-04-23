@@ -77,6 +77,10 @@ default: &default
   proxies: [直连,手动,自动,香港,台湾,日本,新加坡,🇰🇷韩国,美国,国际,拒绝]
 
 proxy-groups:
+  - {name: ChatGPT, <<: *default}
+  - {name: Copilot, <<: *default}
+  - {name: Gemini, <<: *default}
+
   - {name: Claude, <<: *default}
   - {name: Meta AI, <<: *default}
   - {name: Perplexity, <<: *default}
@@ -117,6 +121,10 @@ proxy-groups:
 # 规则引擎（rules）
 # ========================
 rules:
+  - RULE-SET,ChatGPT / Domain,ChatGPT
+  - RULE-SET,Copilot / Domain,Copilot
+  - RULE-SET,Gemini / Domain,Gemini
+
   - RULE-SET,Claude / Domain,Claude
   - RULE-SET,Meta AI / Domain,Meta AI
   - RULE-SET,Perplexity / Domain,Perplexity
@@ -167,6 +175,10 @@ rule-anchor:
   class: &class {type: http, interval: 86400, behavior: classical, format: text}
 
 rule-providers:
+  ChatGPT / Domain: {<<: *class, url: "https://github.geekery.cn/raw.githubusercontent.com/liandu2024/clash/refs/heads/main/list/ChatGPT.list"}
+  Copilot / Domain: {<<: *class, url: "https://github.geekery.cn/raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Copilot/Copilot.list"}
+  Gemini / Domain: {<<: *class, url: "https://github.geekery.cn/raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Gemini/Gemini.list"}
+
   Claude / Domain: {<<: *class, url: "https://github.geekery.cn/raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Claude/Claude.list"}
   Meta AI / Domain: {<<: *class, url: "https://github.geekery.cn/raw.githubusercontent.com/liandu2024/clash/refs/heads/main/list/MetaAi.list"}
   Perplexity / Domain: {<<: *domain, url: "https://github.geekery.cn/github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/perplexity.mrs"}
