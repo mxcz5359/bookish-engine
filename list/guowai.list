@@ -142,6 +142,7 @@ DOMAIN-SUFFIX,colaotc.com
 DOMAIN-SUFFIX,175359.xyz
 DOMAIN-SUFFIX,hostuno.com
 DOMAIN-SUFFIX,fuckip.me
+DOMAIN-SUFFIX,v2rayssr.com
 
 IP-CIDR,8.8.8.8/32,no-resolve
 IP-CIDR,8.8.4.4/32,no-resolve
