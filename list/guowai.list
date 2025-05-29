@@ -143,6 +143,7 @@ DOMAIN-SUFFIX,175359.xyz
 DOMAIN-SUFFIX,hostuno.com
 DOMAIN-SUFFIX,fuckip.me
 DOMAIN-SUFFIX,v2rayssr.com
+DOMAIN-SUFFIX,jollyroger.top
 
 IP-CIDR,8.8.8.8/32,no-resolve
 IP-CIDR,8.8.4.4/32,no-resolve
