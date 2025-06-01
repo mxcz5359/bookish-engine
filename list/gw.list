@@ -145,6 +145,7 @@ DOMAIN-SUFFIX,fuckip.me
 DOMAIN-SUFFIX,v2rayssr.com
 DOMAIN-SUFFIX,jollyroger.top
 DOMAIN-SUFFIX,serv00.com
+DOMAIN-SUFFIX,vkvm.info
 
 IP-CIDR,8.8.8.8/32,no-resolve
 IP-CIDR,8.8.4.4/32,no-resolve
