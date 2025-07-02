@@ -7,7 +7,7 @@
 proxy-providers:
 
   Mitce:
-    url: "https://app.mitce.net/?sid=272424&token=srvkxegz"
+    url: "地址"
     type: http
     interval: 86400
     health-check:
@@ -17,7 +17,7 @@ proxy-providers:
     proxy: 直连 
     
   香港:
-    url: "https://sub.175359.xyz/mFCwYT4buE9XCKyDuVXg/download/hk1"
+    url: "地址"
     type: http
     interval: 86400
     health-check:
@@ -27,7 +27,7 @@ proxy-providers:
     proxy: 直连    
 
   新加坡:
-    url: "https://sub.175359.xyz/mFCwYT4buE9XCKyDuVXg/download/sg"
+    url: "地址"
     type: http
     interval: 86400
     health-check:
@@ -37,7 +37,7 @@ proxy-providers:
     proxy: 直连    
 
   美国:
-    url: "https://sub.175359.xyz/mFCwYT4buE9XCKyDuVXg/download/usb"
+    url: "地址"
     type: http
     interval: 86400
     health-check:
@@ -47,7 +47,7 @@ proxy-providers:
     proxy: 直连      
   
   波兰:
-    url: "https://sub.175359.xyz/mFCwYT4buE9XCKyDuVXg/download/pl"
+    url: "地址"
     type: http
     interval: 86400
     health-check:
@@ -56,7 +56,7 @@ proxy-providers:
       interval: 300
     proxy: 直连  
   日本:
-    url: "https://sub.175359.xyz/mFCwYT4buE9XCKyDuVXg/download/jp"
+    url: "地址"
     type: http
     interval: 86400
     health-check:
