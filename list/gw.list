@@ -149,6 +149,7 @@ DOMAIN-SUFFIX,535359.xyz
 # 准确域名
 DOMAIN,mybox.175359.xyz
 DOMAIN,sub.175359.xyz
+DOMAIN,nz.535359.xyz
 
 IP-CIDR,8.8.8.8/32,no-resolve
 IP-CIDR,8.8.4.4/32,no-resolve
