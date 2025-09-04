@@ -146,7 +146,7 @@ DOMAIN-SUFFIX,jollyroger.top
 DOMAIN-SUFFIX,serv00.com
 DOMAIN-SUFFIX,vkvm.info
 DOMAIN-SUFFIX,535359.xyz
-
+DOMAIN-SUFFIX,dash.xns.one
 
 IP-CIDR,8.8.8.8/32,no-resolve
 IP-CIDR,8.8.4.4/32,no-resolve
