@@ -11,7 +11,7 @@ DOMAIN-SUFFIX,browserleaks.com
 DOMAIN-SUFFIX,browserleaks.org
 DOMAIN-SUFFIX,browserleaks.net
 DOMAIN-SUFFIX,dnsleaktest.org
-
+DOMAIN-SUFFIX,speedtest.net
 
 DOMAIN-SUFFIX,dnsleaktest.com
 DOMAIN-SUFFIX,browserscan.net
@@ -39,4 +39,3 @@ DOMAIN-SUFFIX,ping0.cc
 DOMAIN-SUFFIX,incolumitas.com
 DOMAIN-SUFFIX,incolumitas.com
 DOMAIN-SUFFIX,incolumitas.com
-DOMAIN,www.speedtest.net
