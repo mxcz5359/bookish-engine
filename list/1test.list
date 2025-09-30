@@ -11,7 +11,7 @@ DOMAIN-SUFFIX,browserleaks.com
 DOMAIN-SUFFIX,browserleaks.org
 DOMAIN-SUFFIX,browserleaks.net
 DOMAIN-SUFFIX,dnsleaktest.org
-DOMAIN-SUFFIX,speedtest.net
+DOMAIN,www.speedtest.net
 
 DOMAIN-SUFFIX,dnsleaktest.com
 DOMAIN-SUFFIX,browserscan.net
