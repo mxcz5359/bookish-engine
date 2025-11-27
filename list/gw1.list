@@ -147,11 +147,12 @@ DOMAIN-SUFFIX,serv00.com
 DOMAIN-SUFFIX,vkvm.info
 DOMAIN-SUFFIX,535359.xyz
 DOMAIN-SUFFIX,dash.xns.one
-DOMAIN-SUFFIX,hanimeone.me
-DOMAIN-SUFFIX,hanime1.com
-DOMAIN-SUFFIX,meimoai8.com
-DOMAIN-SUFFIX,meimoai7.com
-DOMAIN-SUFFIX,meimoai10.com
+
+DOMAIN,hanimeone.me
+DOMAIN,hanime1.com
+DOMAIN,meimoai8.com
+DOMAIN,meimoai7.com
+DOMAIN,meimoai10.com
 
 
 
