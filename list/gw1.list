@@ -4,6 +4,7 @@ IP-CIDR,103.115.43.2/32,no-resolve
 IP-CIDR,104.236.69.0/24,no-resolve
 IP-CIDR,95.161.76.0/24,no-resolve
 IP-CIDR,142.251.215.0/24,no-resolve
+
 # 国外DNS
 DOMAIN-SUFFIX,dns.google
 DOMAIN-SUFFIX,1dot1dot1dot1.cloudflare-dns.com
@@ -145,11 +146,13 @@ DOMAIN-SUFFIX,jollyroger.top
 DOMAIN-SUFFIX,serv00.com
 DOMAIN-SUFFIX,vkvm.info
 DOMAIN-SUFFIX,535359.xyz
-DOMAIN-SUFFIX,dash.xns.oneDOMAIN-SUFFIX,hanimeone.me
+DOMAIN-SUFFIX,dash.xns.one
+DOMAIN-SUFFIX,hanimeone.me
 DOMAIN-SUFFIX,hanime1.com
 DOMAIN-SUFFIX,meimoai8.com
 DOMAIN-SUFFIX,meimoai7.com
 DOMAIN-SUFFIX,meimoai10.com
+
 
 
 IP-CIDR,202.6.205.30/32,no-resolve
