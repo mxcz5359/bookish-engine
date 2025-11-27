@@ -6,7 +6,7 @@ DOMAIN,www.deepflood.com
 DOMAIN,lite.cn2gias.uk
 DOMAIN,de.yixia.io
 DOMAIN,cf.lilyemby.my
-# 我的
+
 DOMAIN,win.nzme.top
 DOMAIN,tz.mye.ee
 DOMAIN,test.mye.ee
@@ -15,5 +15,5 @@ DOMAIN,zf.mye.ee
 DOMAIN,mxcz.useruno.com
 DOMAIN,lsky.050002.xyz
 DOMAIN,img.050002.xyz
-DOMAIN-SUFFIX,mxcz.uk
-DOMAIN-SUFFIX,050002.xyz
+DOMAIN,mxcz.uk
+DOMAIN,050002.xyz
