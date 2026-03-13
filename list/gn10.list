@@ -393,13 +393,6 @@ DOMAIN-SUFFIX,zhuihd.com
 
 
 
-#完整域名
-DOMAIN,cdn.lilyemby.my
-
-
-
-
-
 
 # AccelerateDirectSites
 DOMAIN-SUFFIX,10010.com
