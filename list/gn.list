@@ -54,6 +54,7 @@ DOMAIN-KEYWORD,baidu
 # IP段匹配
 IP-CIDR,219.146.1.66/32,no-resolve
 IP-CIDR6,fdfe:dcba:9876::/48,no-resolve
+IP-CIDR,47.104.22.217/32,no-resolve
 
 # VPS
 IP-CIDR,216.40.86.112/24,no-resolve
@@ -71,7 +72,6 @@ IP-CIDR,223.6.6.6/32,no-resolve
 IP-CIDR,180.76.76.76/32,no-resolve
 IP-CIDR,114.114.114.114/32,no-resolve
 IP-CIDR,114.114.115.115/32,no-resolve
-
 
 # 360
 DOMAIN-SUFFIX,360.com
@@ -389,13 +389,6 @@ DOMAIN-SUFFIX,jiasule.com
 DOMAIN-SUFFIX,staticfile.org
 DOMAIN-SUFFIX,upaiyun.com
 DOMAIN-SUFFIX,zhuihd.com
-
-
-
-
-#完整域名
-DOMAIN,cdn.lilyemby.my
-
 
 
 
