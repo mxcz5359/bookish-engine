@@ -1,0 +1,10 @@
+# 关键字匹配
+DOMAIN-KEYWORD,xxm
+DOMAIN-KEYWORD,e0e
+
+# 域名后缀匹配
+DOMAIN-SUFFIX,sakiko.de
+DOMAIN-SUFFIX,longemby.com
+
+
+  
